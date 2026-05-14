@@ -1,4 +1,4 @@
-# Initial dev environment setup - creates VPC, EKS cluster, RDS instance, ECR repositories, IAM roles, and Secrets Manager secrets
+# Initial dev environment setup - creates VPC, EKS cluster, RDS instance, ECR repositories, IAM roles, and Secrets Manager
 
 data "aws_caller_identity" "current" {}
 
