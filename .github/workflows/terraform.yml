@@ -80,12 +80,14 @@ jobs:
       - name: Terraform Plan
         id: plan
         run: |
+          set -euo pipefail
+
           terraform plan \
             -var="db_password=${{ secrets.DEV_DB_PASSWORD }}" \
             -var="jwt_secret=${{ secrets.DEV_JWT_SECRET }}" \
             -var="github_org=${{ vars.GH_ORG }}" \
             -out=tfplan \
-            -no-color
+            -no-color  2>&1 | tee terraform-plan.log
         continue-on-error: true
 
       - name: Check plan status
