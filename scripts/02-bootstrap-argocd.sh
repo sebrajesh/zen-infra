@@ -253,7 +253,7 @@ echo "--------------------------------------------"
 echo "  Step 3 of 3: Deploy Applications ($ENV)"
 echo "--------------------------------------------"
 
-APPS_DIR="zen-gitops/argocd/apps/$ENV"
+APPS_DIR="../zen-gitops/argocd/apps/$ENV"
 [[ -d "$APPS_DIR" ]] || die "Apps directory not found: $APPS_DIR"
 
 if [[ "$ENV" == "dev" ]]; then
